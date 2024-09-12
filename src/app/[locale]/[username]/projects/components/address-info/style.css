@@ -1,0 +1,9 @@
+.autocomplete-container {
+    position: relative;
+    z-index: 9999; /* Ensure this is higher than other overlapping elements */
+  }
+
+  .google-places-autocomplete-dropdown {
+    z-index: 10000 !important; /* Ensure the dropdown is always on top */
+    position: absolute;
+  }

@@ -1,0 +1,8 @@
+.TabsTrigger[data-state='active'] {
+    color:#654BFF;
+}
+
+.Toggle[data-state='on'] {
+  background-color: #654BFF;
+  color: white;
+}

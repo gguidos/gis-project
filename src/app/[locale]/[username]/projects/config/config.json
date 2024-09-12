@@ -1,0 +1,104 @@
+{
+    "allowedColor": "green",
+    "allowedPolylineTooltip": {
+        "options": {
+            "permanent": true,
+            "direction": "right",
+            "className": "custom-draw-tooltip"
+        }
+    },
+    "circle": {
+        "minCircleAngle": 45,
+        "maxCircleAngle": 135,
+        "options": {
+            "fillOpacity": 0.1
+        }
+    },
+    "disallowedColor": "red",
+    "defaultMapLayer": "http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+    "mapLayers": [
+        {
+            "active": true,
+            "name": "google",
+            "link": "http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}"
+        }
+    ],
+    "defaultMapCenter": {
+        "address": "Klintgatan 8, 273 32 Tomelilla, Sweden",
+        "lat": 55.53410239999999,
+        "lng": 13.9550214
+    },
+    "defaultMeasureUnits": {
+        "units": "meters"
+    },
+    "defaultMapContainerStyle": {
+        "width": "100%",
+        "height": "80vh",
+        "borderRadius": "15px 0px 0px 15px",
+        "zIndex": 0 
+    },
+    "defaultDrawControlOptions": {
+        "circle": false,
+        "circlemarker": false,
+        "marker": false,
+        "rectangle": {},
+        "polygon": {},
+        "polyline": {}
+    },
+    "minStrokeLength": 10,
+    "maxStrokeLength": 100,
+    "groundPolygon": {
+        "options": {
+            "color": "rgb(34, 197, 94)"
+        }
+    },
+    "polygonGrid": {
+        "solarPanelDimensions": {
+            "width": 1,
+            "height": 2,
+            "orientation": "landscape",
+            "marginLng": 0.2,
+            "marginLat": 0.2 
+        },
+        "options": {
+            "color": "green",
+            "weight": 2,
+            "fillColor": "#66c2a5",
+            "fillOpacity": 0.5
+        }
+    },
+    "polyLine": {
+        "minLength": 10,
+        "maxLength": 100,
+        "options": {
+            "strokeColor": "#FF0000",
+            "strokeOpacity": 0.5,
+            "strokeWeight": 2,
+            "clickable": false
+        }
+    },
+    "paddedPolygon": {
+        "scaleFactor": 0.9,
+        "options": {
+            "color": "blue"
+        }
+    },
+    "rectangle": {
+        "options": {
+            "strokeColor": "#FF0000",
+            "strokeOpacity": 0.5,
+            "strokeWeight": 2,
+            "clickable": false
+        }
+    },
+    "restrictions": {
+        "shapeQty": 5
+    },
+    "tileLayer": {
+        "zoom" : {
+            "default": 20,
+            "maxZoom": 21,
+            "minZoom": 18
+        }
+    }
+}

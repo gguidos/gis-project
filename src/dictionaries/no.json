@@ -1,0 +1,68 @@
+{
+  "root": {
+    "metadata": {
+      "title": "Solcellskalkylator",
+      "description": "Beräkning av solenergi"
+    }
+  },
+  "Countries": {
+    "dk": "Danmark",
+    "fi": "Finland",
+    "no": "Norge",
+    "se": "Sverige"
+  },
+  "Home": {
+    "welcome": "Välkommen {name}"
+  },
+  "Menu": {
+      "back": "Tillbaka",
+      "myProjects": "Mina projekt",
+      "newProject": "Ny projekt"
+  },
+  "NewProject": {
+    "title": "Ny project"
+  },
+  "UserInfo": {
+    "title":"Projektinfo",
+    "tabs": {
+      "information": {
+        "title": "Uppgifter",
+        "private": {
+          "title": "Privat",
+          "fields": {
+            "fullname": "Namn och Efternamn",
+            "idNo": "Personnummer"
+          }
+        },
+        "enterprise": {
+          "title": "Företag"
+        },
+        "fields": {
+          "email": "E-post",
+          "address": "Adress",
+          "country": "Land",
+          "zipcode": "Postnummer",
+          "coordinates": "Koordinater"
+        }
+      },
+      "electricity": {
+        "title": "Elektricitet"
+      }
+    }
+  },
+  "languageSwitcher": {
+    "label": "Språk",
+    "languages": {
+      "en": "Engelska",
+      "sv": "Svenska",
+      "no": "Norska",
+      "fi": "Finska"
+    }
+  },
+  "countrySwitcher": {
+    "label": "Land",
+    "countries": {
+      "sv": "Sverige"
+    }
+  }
+}

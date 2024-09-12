@@ -1,0 +1,30 @@
+version: 0.2
+run-as: root
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20 # specify the Node.js version you want to use
+  pre_build:
+    commands:
+      - echo "Setting up environment variables..."
+      - echo "NEXT_PUBLIC_GOOGLE_MAP_API=$NEXT_PUBLIC_GOOGLE_MAP_API" > .env.local
+      - echo "NEXT_GOOGLE_MAP_ID=$NEXT_GOOGLE_MAP_ID" >> .env.local
+  build:
+    commands:
+      - echo "Building Docker image..."
+      - docker build -t solelreactmap .
+      - docker save solelreactmap -o solelreactmap.tar
+  post_build:
+    commands:
+       - echo "Build complete, preparing artifacts..."
+artifacts:
+  files:
+    - appspec.yml
+    - solelreactmap.tar
+    - docker-compose.yml
+    - scripts/*
+    - certs/*
+    - nginx/*
+    - .env.local
+  base-directory: "./"
+  discard-paths: no

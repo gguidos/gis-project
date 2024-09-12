@@ -1,0 +1,10 @@
+.grid-background {
+    background-color: #1a1a2e; /* Dark background color */
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px; /* Size of the grid squares */
+    width: 100%;
+    height: 95vh; /* Full height */
+    position: relative;
+  }

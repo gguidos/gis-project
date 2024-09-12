@@ -1,0 +1,63 @@
+{
+  "root": {
+    "metadata": {
+      "title": "Sun panel calculator",
+      "description": "Calculating sun energy"
+    }
+  },
+ "Countries": {
+    "dk": "Denmark",
+    "fi": "Finland",
+    "no": "Norway",
+    "se": "Sweden"
+  },
+  "Home": {
+    "welcome": "Welcome {name}"
+  },
+  "Menu": {
+      "back": "Back",
+      "myProjects": "My projects",
+      "newProject": "New projects"
+  },
+  "NewProject": {
+    "title": "New project"
+  },
+  "UserInfo": {
+    "title":"Project Information",
+    "tabs": {
+      "information": {
+        "title": "Information",
+        "private": {
+          "title": "Private",
+          "fields": {
+            "fullname": "Fullname",
+            "idNo": "Id No"
+          }
+        },
+        "enterprise": {
+          "title": "Enterprise"
+        },
+        "fields": {
+          "email": "E-mail",
+          "address": "Address",
+          "country": "Country",
+          "zipcode": "Postal Code",
+          "coordinates": "Coordinates"
+
+        }
+      },
+      "electricity": {
+        "title": "Electricity"
+      }
+    }
+  },
+  "languageSwitcher": {
+    "label": "Languages",
+    "languages": {
+      "en": "English",
+      "sv": "Swedish",
+      "no": "Norwegian",
+      "fi": "Finnish"
+    }
+  }
+}
