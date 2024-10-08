@@ -17,23 +17,15 @@ import {
 } from '@/components/ui/form';
 import { X, Search, Clock, PlusSquare } from 'lucide-react';
 import Conditional from '@/components/utils/ConditionalRendering';
-import GoogleSearchBar from '../google-search'; // Import GoogleSearchBar
 import { users, Users } from './mock-data/users';
 
 export default function PrivateInformation() {
   const t = useTranslations('UserInfo');
-  const tc = useTranslations('Countries');
   const [suggestions, setSuggestions] = useState<Users[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isDisabled, setIsDisabled] = useState(false);
-  const [isCoordsReady, setIsCoordsReady] = useState(false);
   const [hasNameSelected, setHasNameSelected] = useState(false);
-
-  const countries = [
-    { name: tc('se'), value: 'se' },
-    // Add more countries as needed
-  ];
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -109,10 +101,6 @@ export default function PrivateInformation() {
     setSuggestions([]);
   };
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    // localStorage.setItem('users', JSON.stringify([values]));
-  };
-
   return (
     <Form {...form}>
       <form className="space-y-2">
@@ -130,34 +118,43 @@ export default function PrivateInformation() {
                     value={inputValue}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown} // Handle keyboard navigation
-                    className="pr-10"
+                    className="
+                      px-2
+                      py-1
+                      pr-10
+                      bg-background
+                      focus:outline-blue-300
+                      focus-outline-4
+                      disabled:text-foreground
+                      disabled:bg-muted
+                      disabled:opacity-1"
                     autoComplete="off"
                     disabled={isDisabled}
                   />
                   <Conditional showWhen={inputValue === ''}>
                     <Search
                       className="
-									absolute
-									right-2
-									top-1/2
-									transform
-									-translate-y-1/2 
-									h-5 w-5 
-									text-gray-400
-									cursor-pointer"
+                        absolute
+                        right-2
+                        top-1/2
+                        transform
+                        -translate-y-1/2 
+                        h-5 w-5 
+                        text-gray-400
+                        cursor-pointer"
                     />
                   </Conditional>
                   <Conditional showWhen={inputValue !== ''}>
                     <X
                       className="
-									absolute
-									right-2
-									top-1/2
-									transform
-									-translate-y-1/2 
-									h-5 w-5 
-									text-gray-400
-									cursor-pointer"
+                        absolute
+                        right-2
+                        top-1/2
+                        transform
+                        -translate-y-1/2 
+                        h-5 w-5 
+                        text-gray-400
+                        cursor-pointer"
                       onClick={clearName}
                     />
                   </Conditional>
@@ -165,9 +162,9 @@ export default function PrivateInformation() {
               </FormControl>
               <Conditional showWhen={suggestions.length > 0 || inputValue !== ''}>
                 <div
-                  className={`absolute left-0 right-0 bg-white rounded-md mt-1 z-10 ${
+                  className={`absolute left-0 right-0 bg-background rounded mt-1 ${
                     suggestions.length > 0 || inputValue !== ''
-                      ? 'border border-gray-200'
+                      ? 'border border-border'
                       : 'border-0'
                   }`}
                 >
@@ -178,21 +175,21 @@ export default function PrivateInformation() {
                           <div>
                             <Input
                               type="text"
-                              className="bg-indigo-100"
+                              className="bg-background focus:bg-secondary"
                               value={inputValue}
                               readOnly
                               disabled
                             />
                             <PlusSquare
                               className="
-													absolute
-													right-2
-													top-1/2
-													transform
-													-translate-y-1/2 
-													h-5 w-5 
-													text-gray-400
-													cursor-pointer"
+                                absolute
+                                right-2
+                                top-1/2
+                                transform
+                                -translate-y-1/2 
+                                h-5 w-5 
+                                text-gray-400
+                                cursor-pointer"
                             />
                           </div>
                         </FormControl>
@@ -201,7 +198,7 @@ export default function PrivateInformation() {
                   </Conditional>
                   <Conditional showWhen={suggestions.length > 0}>
                     <Separator />
-                    <div className="w-full px-4 py-2 text-sm text-gray-500 flex place-content-center">
+                    <div className="w-full bg-background px-4 py-2 text-sm text-foreground flex place-content-center">
                       <Clock className="h-4 w-4 mr-2" /> Från systemet
                     </div>
                     <ul>
@@ -209,7 +206,7 @@ export default function PrivateInformation() {
                         <li
                           key={user.fullname}
                           className={`p-5 cursor-pointer ${
-                            selectedIndex === index ? 'bg-gray-200' : 'hover:bg-gray-100'
+                            selectedIndex === index ? 'bg-background' : 'hover:bg-secondary'
                           }`}
                           onClick={() => handleSuggestionClick(user)}
                         >
@@ -228,7 +225,6 @@ export default function PrivateInformation() {
                   </Conditional>
                 </div>
               </Conditional>
-              <FormMessage />
             </FormItem>
           )}
         />
